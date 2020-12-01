@@ -15,11 +15,14 @@ func main() {
 
 	for i := 0; i < len(input); i++ {
 		for n := 0; n < len(input); n++ {
-			if n == i {
-				break
-			}
-			if input[i]+input[n] == 2020 {
-				fmt.Println("Answer: ", input[i] * input[n])
+			for l := 0; l < len(input); l ++{
+				if n == i || n == l || i == l {
+					break
+				}
+				if input[i]+input[n]+input[l]== 2020 {
+					fmt.Println(i, n, l)
+					fmt.Println("Answer: ", input[i] * input[n] * input[l])
+				}
 			}
 		}
 	}
