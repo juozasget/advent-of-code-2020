@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a7515a3-21fc-405d-9a6c-e6af93528e11" name="Default Changelist" comment="" />
+    <list default="true" id="3a7515a3-21fc-405d-9a6c-e6af93528e11" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/1/.idea/1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1/.idea/workspace.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +44,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1606928387328">
