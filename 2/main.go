@@ -24,15 +24,10 @@ func main() {
 
 	validCount := 0
 	for _, password := range passwordSlice {
-		charCount := 0
-		for _, singleRune := range password.UserPass {
-			if string(singleRune) == password.Char {
-				fmt.Println(string(singleRune), " ", password.Char)
-				charCount++
-			}
+		if string(password.UserPass[password.Min-1]) == password.Char && string(password.UserPass[password.Max-1]) != password.Char {
+			validCount++
 		}
-
-		if password.Min <= charCount && charCount <= password.Max {
+		if string(password.UserPass[password.Max-1]) == password.Char && string(password.UserPass[password.Min-1]) != password.Char {
 			validCount++
 		}
 	}
