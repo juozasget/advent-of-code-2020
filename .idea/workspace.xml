@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3a7515a3-21fc-405d-9a6c-e6af93528e11" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/2/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +71,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1606928387328">
