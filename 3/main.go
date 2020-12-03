@@ -26,13 +26,53 @@ func main() {
 	fmt.Println("Width: ", mapWidth)
 	fmt.Println("Length: ", mapLength)
 
-	for i:= 0; i < (mapLength * 3) / 31 + 31; i++ {
-		extendMap(landMap)
+	//for i:= 0; i < (mapLength * 3) / 31 + 31; i++ {
+	//	extendMap(landMap)
+	//}
+
+	fmt.Println("Extend by: ", (mapLength * 3) / mapWidth + mapWidth)
+
+	extendedMap := extendMap(landMap, (mapLength * 3) / mapWidth + mapWidth)
+
+
+	for _, line := range extendedMap {
+		fmt.Println(line)
 	}
+
+	cursorX := 0
+	cursorY := 0
+
+	treeCount := 0
+
+	for {
+		cursorX += 3
+		cursorY += 1
+		fmt.Println("X: ", cursorX)
+		fmt.Println("Y: ", cursorY)
+		if string(extendedMap[cursorY][cursorX]) == "#" {
+			treeCount++
+		}
+		if string(extendedMap[cursorY][cursorX]) == "X" {
+			break
+		}
+	}
+
+	fmt.Println("Obstacle count: ", treeCount)
 }
 
-func extendMap(line string) string {
-	return ""
+func extendMap(landMap []string, extendBy int) []string {
+	newMap := make([]string, 0)
+
+	for n, line := range landMap {
+		newline := line
+		for i:= 0; i < extendBy; i++ {
+			newline += line
+		}
+		newMap = append(newMap, newline)
+		fmt.Println("Line appended: ", n)
+	}
+
+	return newMap
 }
 
 func readInput(fileName string) []string {
