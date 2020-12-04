@@ -30,25 +30,38 @@ func main() {
 	//	extendMap(landMap)
 	//}
 
-	fmt.Println("Extend by: ", (mapLength * 3) / mapWidth + mapWidth)
+	fmt.Println("Extend by: ", (mapLength * 7) / mapWidth)
 
-	extendedMap := extendMap(landMap, (mapLength * 3) / mapWidth + mapWidth)
+	extendedMap := extendMap(landMap, (mapLength * 7) / mapWidth)
 
 
-	for _, line := range extendedMap {
-		fmt.Println(line)
+	//for _, line := range extendedMap {
+	//	fmt.Println(line)
+	//}
+
+	cursotIncrListX := []int{1, 3, 5, 7, 1}
+	cursotIncrListY := []int{1, 1, 1, 1, 2}
+
+	obstacleCount := 1
+
+	for i := range cursotIncrListX {
+		obstacleCount *= countObstacles(extendedMap, cursotIncrListX[i], cursotIncrListY[i])
+		fmt.Println("Obstacle count: ", obstacleCount)
 	}
 
+	fmt.Println("Multiplied obstacle count: ", obstacleCount)
+}
+
+func countObstacles(extendedMap []string, cursorIncrX, cursorIncrY int) int {
+	treeCount := 0
 	cursorX := 0
 	cursorY := 0
 
-	treeCount := 0
-
 	for {
-		cursorX += 3
-		cursorY += 1
-		fmt.Println("X: ", cursorX)
-		fmt.Println("Y: ", cursorY)
+		cursorX += cursorIncrX
+		cursorY += cursorIncrY
+		//fmt.Println("X: ", cursorX)
+		//fmt.Println("Y: ", cursorY)
 		if string(extendedMap[cursorY][cursorX]) == "#" {
 			treeCount++
 		}
@@ -57,7 +70,7 @@ func main() {
 		}
 	}
 
-	fmt.Println("Obstacle count: ", treeCount)
+	return treeCount
 }
 
 func extendMap(landMap []string, extendBy int) []string {
@@ -94,6 +107,12 @@ func readInput(fileName string) []string {
 	err = inputFile.Close()
 	if err != nil {
 		log.Fatal("Error closing file")
+	}
+
+	input = append(input, "")
+
+	for i:= 0; i < len(input[0]); i++ {
+		input[len(input)-1] += "X"
 	}
 
 	input = append(input, "")
