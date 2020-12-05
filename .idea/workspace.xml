@@ -19,7 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a7515a3-21fc-405d-9a6c-e6af93528e11" name="Default Changelist" comment="" />
+    <list default="true" id="3a7515a3-21fc-405d-9a6c-e6af93528e11" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/5/main.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +55,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="settings.editor.selected.configurable" value="go.autoimport" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -78,15 +82,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="968" y="440" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1607115495709">
-      <screen x="0" y="23" width="2560" height="1349" />
-    </state>
-    <state x="968" y="440" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.2560.1349@0.23.2560.1349" timestamp="1607115495709" />
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1606928387328">
-      <screen x="0" y="23" width="1792" height="1029" />
-    </state>
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.23.1792.1029@0.23.1792.1029" timestamp="1606928387328" />
   </component>
 </project>
