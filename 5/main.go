@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"fmt"
+	"sort"
 )
 
 type BoardingPass struct {
@@ -30,11 +31,37 @@ func main() {
 		if boardingPass.SeatID > highestSeatID {
 			highestSeatID = boardingPass.SeatID
 		}
+		//fmt.Println(*boardingPass)
+	}
 
-		fmt.Println(*boardingPass)
+	sort.Slice(boardingPasses, func(i, j int) bool {
+		return boardingPasses[i].SeatID < boardingPasses[j].SeatID
+	})
+
+	for _, bp := range boardingPasses {
+		fmt.Println(*bp)
+	}
+
+	fmt.Println(boardingPasses)
+	head := 5
+
+	fmt.Println("STARTING WITH:", boardingPasses[4])
+
+	for i := 10; i < 108; i++ {
+		for n := 0; n < 8; n++ {
+			if boardingPasses[head].rowID != i && boardingPasses[head].colID != n {
+				fmt.Printf("Missing row: %d col: %d\n", i, n)
+				fmt.Printf("row: %d col: %d\n", boardingPasses[head].rowID, boardingPasses[head].colID)
+			}
+			head++
+		}
 	}
 
 	fmt.Println(highestSeatID)
+}
+
+func (bp *BoardingPass) String() string {
+	return fmt.Sprintf("RowInst: %s, ColInst: %s, SeatID: %d, colID: %d, rowID: %d\n", bp.RowInst, bp.ColInst, bp.SeatID, bp.colID, bp.rowID)
 }
 
 func (bp *BoardingPass) ParseAll() {
