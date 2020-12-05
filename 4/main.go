@@ -20,6 +20,7 @@ type Passport struct {
 	Ecl string //(Eye Color)
 	Pid string //(Passport ID)
 	Cid string //(Country ID)
+	IsValid bool
 }
 
 func main() {
@@ -28,13 +29,22 @@ func main() {
 
 	validPassCount := 0
 	for _, passport := range passportList {
-		fmt.Println(*passport)
-		if passport.ValidateFieldsExist() && passport.ValidateAll() {
+		if passport.ValidateAll() {
+			passport.IsValid = true
 			validPassCount++
+		} else {
+			passport.IsValid = false
 		}
+
+		if passport.IsValid == true {
+			fmt.Println("\033[32m", *passport)
+		} else {
+			fmt.Println("\033[31m", *passport)
+		}
+
 	}
 
-	fmt.Println("Valid passports: ", validPassCount)
+	fmt.Println("\033[0m", "Valid passports: ", validPassCount)
 }
 
 // four digits; at least 1920 and at most 2002
@@ -150,9 +160,11 @@ func (p *Passport) ValidateEcl() bool {
 		return true
 	case "blu":
 		return true
-	case "bryn":
+	case "brn":
 		return true
 	case "gry":
+		return true
+	case "grn":
 		return true
 	case "hzl":
 		return true
@@ -179,6 +191,9 @@ func (p *Passport) ValidatePid() bool {
 
 // ValidateAll validates all
 func (p *Passport) ValidateAll() bool {
+	if !p.ValidateFieldsExist() {
+		return false
+	}
 	if p.ValidateByr() && p.ValidateEcl() && p.ValidateEyr() && p.ValidateHcl() && p.ValidateHgt() && p.ValidateIyr() && p.ValidateIyr() && p.ValidatePid() {
 		return true
 	}
